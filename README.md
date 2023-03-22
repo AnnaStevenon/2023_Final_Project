@@ -3,7 +3,7 @@
 ### Team Members
 1. Anna Stevenson
 2. Nolan Niedermeyer
-3.
+3. Noah Sticha
 
 ### Final Proposal
 1. Persona/Scenario
