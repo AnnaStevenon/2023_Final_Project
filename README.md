@@ -20,11 +20,25 @@
 
         | Layer | Description of source and proposed symbolization |
         | --------- | ---------- |
-        | Base Map| Leaflet tiles, outline of Wisconsin with terrain/satellite|
-        
+        | Base Map| Leaflet tiles, outline of Wisconsin with terrain/satellite. |
+        | Ice Age Trail | Offical layer from ArcOnline, lines showing all segments - not including connected routes. |
+        | Parking | ArcOnline, P symbols - can overlay from legend but intially turned off. |
+        | eBird ranges | Cornell eBird range prediction polygons (aiming for 20 species), each species has 1 to 4 polygons based on temporal distribution, color coded by temporal category, semi opaque. |
 
 
     2. Interactions
+
+        | Title of function | Coding by operator and operand and description of proposed interaction behavior and UI design|
+        | ------------------ | --------------------------------------- |
+        | Introduction window | Retrieve: map description and instructions, link to official site, button to enter map|
+        | Search / menu panel | Search: bird species, smart search and accordian menu to show options.|
+        | Apply bird selection | Overlay and retrieve: bird range and bio. Left panel opens with photos and information on the bird, ranges are shown as polygons on the map with updated legend for temporal ranges.|
+        | Legend | Overlay: parking, bird species temporal layers. Turn off and on parking and species layer for time periods. |
+        | Hike segments | Identify and retrieve: segment name and details. Popup for name, length and pictures for some notable segments. |
+        | Zoom and pan | Zoom and pan : across map and allow users to investivated detials of segments of interest using basemap terrain. |
+        | Return to overview | Overlay : return to full map of WI with just trail layer shown. |
+        
+         
 3. Wireframes
     1. ![Wireframe](wireframe.png)
  
