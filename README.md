@@ -30,15 +30,15 @@
 
         | Title of function | Coding by operator and operand and description of proposed interaction behavior and UI design|
         | ------------------ | --------------------------------------- |
-        | Introduction window | Retrieve: map description and instructions, link to official site, button to enter map|
+        | Introduction window | Retrieve: map description and instructions, link to official site, button to enter map.|
         | Search / menu panel | Search: bird species, smart search and accordian menu to show options.|
         | Apply bird selection | Overlay and retrieve: bird range and bio. Left panel opens with photos and information on the bird, ranges are shown as polygons on the map with updated legend for temporal ranges.|
         | Legend | Overlay: parking, bird species temporal layers. Turn off and on parking and species layer for time periods. |
         | Hike segments | Identify and retrieve: segment name and details. Popup for name, length and pictures for some notable segments. |
         | Zoom and pan | Zoom and pan : across map and allow users to investivated detials of segments of interest using basemap terrain. |
         | Return to overview | Overlay : return to full map of WI with just trail layer shown. |
-        
-         
+
+
 3. Wireframes
     1. ![Wireframe](wireframe.png)
  
