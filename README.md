@@ -43,8 +43,8 @@
 
 
 3. Wireframes
-    1. ![Wireframe 1](/img/WireFrame_1.pngwireframe.png)
-    2. ![Wireframe 2](/img/WireFrame_2.pngwireframe.png)
-    3. ![Wireframe 3](/img/WireFrame_3.pngwireframe.png)
-    4. ![Wireframe 4](/img/WireFrame_4.pngwireframe.png)
+    1. ![Wireframe 1](/img/WireFrame_1.png)
+    2. ![Wireframe 2](/img/WireFrame_2.png)
+    3. ![Wireframe 3](/img/WireFrame_3.png)
+    4. ![Wireframe 4](/img/WireFrame_4.png)
  
