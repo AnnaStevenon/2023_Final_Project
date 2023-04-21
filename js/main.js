@@ -5,7 +5,8 @@ function createMap(){
     //create the map
     map = L.map('map', {
         center: [44.5, -89],
-        zoom: 6.50
+        zoom: 6.50,
+        attributionControl: false
     
     });
 
@@ -16,7 +17,50 @@ function createMap(){
     }).addTo(map);
 
     //call getData function
+
+    createSequenceControls();
+
+    //map.attributionControl.setPrefix(false)
+
 };
+
+//Create new sequence controls
+function createSequenceControls(){   
+    var SequenceControl = L.Control.extend({
+        options: {
+            position: 'bottomleft'
+        },
+
+        onAdd: function () {
+            // create the control container div with a particular class name
+            var container = L.DomUtil.create('div', 'sequence-control-container');
+            
+            //add season buttons
+            container.insertAdjacentHTML('beforeend', '<button class="season" id="breeding" title="Breeding"></button>'); 
+            container.insertAdjacentHTML('beforeend', '<button class="season" id="onbreeding" title="Nonbreeding"></button>');
+            container.insertAdjacentHTML('beforeend', '<button class="season" id="rebreeding" title="Prebreeding Migration"></button>');
+            container.insertAdjacentHTML('beforeend', '<button class="season" id="postbreeding" title="Postbreeding Migration"></button>');
+
+
+            //disable any mouse event listeners for the container
+            L.DomEvent.disableClickPropagation(container);
+
+            return container;
+        }
+    });
+
+    map.addControl(new SequenceControl());  
+
+
+
+    document.querySelectorAll('.season').forEach(function(season){
+        season.addEventListener("click", function(){
+            
+        })
+    })
+
+};
+
 
 
 
