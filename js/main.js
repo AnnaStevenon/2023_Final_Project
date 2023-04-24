@@ -81,11 +81,10 @@ function getBirdData(map){
 };
 
 
-// Style polygons based on time period - need to write a function for colors changing by season but am confused....
-
+// Style polygons based on time period
 function styleBirdRanges(feature) {
     return {
-        fillColor: '',
+        fillColor: fillSeason(feature.properties.season),
         fillOpacity: 0.2,
         weight: 2,
         color: '#fff',
@@ -93,7 +92,18 @@ function styleBirdRanges(feature) {
     };
 };
 
-
+// function to change color by season, note that colors are temporary/random for now
+function fillSeason(season) {
+    if(season=="breeding"){
+        return "green"
+    } else if (season == "nonbreeding") {
+        return "red"
+    } else if (season === "prebreeding_migration") {
+        return "blue"
+    } else if (season == "postbreeding_migration") {
+        return "orange"
+    }   
+};
 
 
 
