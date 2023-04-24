@@ -16,9 +16,11 @@ function createMap(){
 	    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    //call getData function
-
+    //call getBirdData function
+    getBirdData(map);
+    //call creatSequenceControls function
     createSequenceControls();
+
 
     //map.attributionControl.setPrefix(false)
 
@@ -60,6 +62,24 @@ function createSequenceControls(){
     })
 
 };
+
+    // add bird ranges to the map
+    var birdRanges = new L.geoJson();
+
+    function getBirdData(map){
+        fetch('data/ebird_ranges.geojson')
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(json){
+            L.geoJson(json).addTo(map);
+        })
+
+        console.log(birdRanges)
+    };
+
+    
+
 
 
 
