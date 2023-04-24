@@ -64,7 +64,7 @@ function createSequenceControls(){
 };
 
     // add bird ranges to the map
-var birdRanges = new L.geoJson();
+var birdRanges = new L.featureGroup();
 
 function getBirdData(map){
     fetch('data/ebird_ranges.geojson')
