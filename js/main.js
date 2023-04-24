@@ -64,21 +64,35 @@ function createSequenceControls(){
 };
 
     // add bird ranges to the map
-    var birdRanges = new L.geoJson();
+var birdRanges = new L.geoJson();
 
-    function getBirdData(map){
-        fetch('data/ebird_ranges.geojson')
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(json){
-            L.geoJson(json).addTo(map);
-        })
+function getBirdData(map){
+    fetch('data/ebird_ranges.geojson')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(json){
+        L.geoJson(json, {
+            style: styleBirdRanges
+        }).addTo(map);
+    })
 
-        console.log(birdRanges)
+    console.log(birdRanges)
+};
+
+
+// Style polygons based on time period - need to write a function for colors changing by season but am confused....
+
+function styleBirdRanges(feature) {
+    return {
+        fillColor: '',
+        fillOpacity: 0.5,
+        weight: 2,
+        color: '#fff',
+        opacity: 1,
     };
+}
 
-    
 
 
 
