@@ -18,6 +18,8 @@ function createMap(){
 
     //call getBirdData function
     getBirdData(map);
+    //call getTrailData function
+    getTrailData(map);
     //call creatSequenceControls function
     createSequenceControls();
 
@@ -105,7 +107,30 @@ function fillSeason(season) {
     }   
 };
 
+// add Ice Age Trail data
+var trail = new L.featureGroup();
 
+function getTrailData(map){
+    fetch('data/Ice_Age_Trail_simple.geojson')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(json){
+        L.geoJson(json, {
+            style: styleTrail
+        }).addTo(map);
+    })
 
+    console.log(trail)
+};
+
+// Style Ice Age Trail
+function styleTrail(feature) {
+    return {
+        weight: 2,
+        color: "red",
+        opacity: 1,
+    };
+};
 
 document.addEventListener('DOMContentLoaded',createMap);
