@@ -86,12 +86,12 @@ function getBirdData(map){
 function styleBirdRanges(feature) {
     return {
         fillColor: '',
-        fillOpacity: 0.5,
+        fillOpacity: 0.2,
         weight: 2,
         color: '#fff',
         opacity: 1,
     };
-}
+};
 
 
 
