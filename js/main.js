@@ -88,7 +88,7 @@ function styleBirdRanges(feature) {
     return {
         fillColor: fillSeason(feature.properties.season),
         fillOpacity: 0.2,
-        weight: 2,
+        weight: 1,
         color: '#fff',
         opacity: 1,
     };
