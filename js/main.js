@@ -117,7 +117,10 @@ function getTrailData(map){
     })
     .then(function(json){
         L.geoJson(json, {
-            style: styleTrail
+            style: styleTrail,
+            onEachFeature: function(feature, layer) { //add a popup for each segment with the name
+                layer.bindPopup("Segment: " + feature.properties.SEGMENT_NA)
+            }
         }).addTo(map);
     })
 
