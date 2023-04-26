@@ -89,8 +89,9 @@ function getBirdData(map){
 function search_birds(birdRanges) {
   let input = document.getElementById('searchbar').value
   input=input.toLowerCase();
-  let x = document.getElementsByClassName('common_nam');
-    
+  console.log(input)
+  let x = document.getElementsByClassName('common-nam');
+    console.log(x)
   for (i = 0; i < x.length; i++) { 
       if (!x[i].innerHTML.toLowerCase().includes(input)) {
           x[i].style.display="none";

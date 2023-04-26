@@ -9,6 +9,9 @@
      margin-left: 15%;
      padding:15px;
      border-radius: 10px;
+     z-index: 100000;
+     position:absolute;
+     top:15px;
    }
 
     input[type=text] {
@@ -41,5 +44,5 @@
  }
 
 .birds{
- display: list-item;    
+ display: list-item; 
 } 
