@@ -22,7 +22,7 @@ function createMap(){
     getTrailData(map);
     //call creatSequenceControls function
     createSequenceControls();
-
+    //
 
     //map.attributionControl.setPrefix(false)
 
@@ -81,6 +81,7 @@ function getBirdData(map){
 
     console.log(birdRanges)
 };
+
 function search_birds() {
   let input = document.getElementById('searchbar').value
   input=input.toLowerCase();
@@ -94,7 +95,7 @@ function search_birds() {
           x[i].style.display="list-item";                 
       }
   }
-}
+};
 
 
 // Style polygons based on time period
