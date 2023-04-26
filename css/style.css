@@ -1,5 +1,4 @@
 #map {
-<<<<<<< HEAD
     height: 600px;
     width: 90%;
     display: inline-block;
@@ -23,23 +22,17 @@
  input[type=text]:focus {
    width: 70%;
  }
-=======
-    height: 500px;
-    width: 100%;
-    display: inline-block;
-    border: solid gray 5px; 
-}
-.sequence-control-container {  
-    width: 350px;  
-    height: 45px;  
-    background-color: rgba(255,255,255,0.8); 
-    line-height: 45px; 
-    padding-top: 5px; 
-    text-align: center;  
-    border: solid gray 1px;  
+
+ .sequence-control-container {  
+  width: 350px;  
+  height: 45px;  
+  background-color: rgba(255,255,255,0.8); 
+  line-height: 45px; 
+  padding-top: 5px; 
+  text-align: center;  
+  border: solid gray 1px;  
 } 
 .season {
-    width: 85px;  
-    height: 40px;
+  width: 85px;  
+  height: 40px;
 }
->>>>>>> 451effb931dec5f6ffb6495f6a4b634c62852c21
