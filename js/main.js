@@ -5,7 +5,7 @@ function createMap(){
     //create the map
     map = L.map('map', {
         center: [44.5, -89],
-        zoom: 6.50,
+        zoom: 6.45,
         attributionControl: false
     
     });
@@ -25,6 +25,8 @@ function createMap(){
     //call creatSequenceControls function
     createSequenceControls();
     //
+
+    search_birds(birdRanges)
 
     //map.attributionControl.setPrefix(false)
 
@@ -84,7 +86,7 @@ function getBirdData(map){
     console.log(birdRanges)
 };
 
-function search_birds() {
+function search_birds(birdRanges) {
   let input = document.getElementById('searchbar').value
   input=input.toLowerCase();
   let x = document.getElementsByClassName('common_nam');
