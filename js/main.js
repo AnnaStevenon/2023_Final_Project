@@ -1,4 +1,6 @@
 var map;
+var birdLayer;
+var trailLayer;
 
 function createMap(){
 
@@ -26,7 +28,7 @@ function createMap(){
     createSequenceControls();
     //
 
-    search_birds(birdRanges)
+    search_birds()
 
     //map.attributionControl.setPrefix(false)
 
@@ -70,7 +72,7 @@ function createSequenceControls(){
 };
 
     // add bird ranges to the map
-var birdRanges = new L.featureGroup();
+//var birdRanges = new L.featureGroup();
 
 function getBirdData(map){
     fetch('data/ebird_ranges.geojson')
@@ -78,29 +80,31 @@ function getBirdData(map){
         return response.json();
     })
     .then(function(json){
-        L.geoJson(json, {
+        birdLayer = L.geoJson(json, {
             style: styleBirdRanges
         }).addTo(map);
     })
 
-    console.log(birdRanges)
 };
 
-function search_birds(birdRanges) {
+function search_birds() {
   let input = document.getElementById('searchbar').value
   input=input.toLowerCase();
-  let x = document.getElementsByClassName('common_nam');
+  let x = document.getElementsByClassName('common-nam');
     
   for (i = 0; i < x.length; i++) { 
-      if (!x[i].innerHTML.toLowerCase().includes(input)) {
-          x[i].style.display="none";
+      if (x[i].innerHTML.toLowerCase().includes(input) && input) {
+        x[i].style.display="list-item";   
+        var result = x[i].innerHTML;
+        //https://leafletjs.com/reference.html#geojson-setstyle
+        document.querySelector(".sequence-control-container").style.display = "block";  // makes it so the buttons are hidden until a search is conducted
       }
       else {
-          x[i].style.display="list-item";                 
-      }
-  }
+          x[i].style.display="none";   
+       
+    }
 };
-
+}
 
 // Style polygons based on time period
 function styleBirdRanges(feature) {
@@ -127,7 +131,7 @@ function fillSeason(season) {
 };
 
 // add Ice Age Trail data
-var trail = new L.featureGroup();
+//var trail = new L.featureGroup();
 
 function getTrailData(map){
     fetch('data/Ice_Age_Trail_simple.geojson')
@@ -135,7 +139,7 @@ function getTrailData(map){
         return response.json();
     })
     .then(function(json){
-        L.geoJson(json, {
+        trailLayer = L.geoJson(json, {
             style: styleTrail,
             onEachFeature: function(feature, layer) { //add a popup for each segment with the name
                 layer.bindPopup("Segment: " + feature.properties.SEGMENT_NA)
@@ -143,7 +147,6 @@ function getTrailData(map){
         }).addTo(map);
     })
 
-    console.log(trail)
 };
 
 // Style Ice Age Trail
