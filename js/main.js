@@ -16,6 +16,8 @@ function createMap(){
         attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    search_birds()
+
     //call getBirdData function
     getBirdData(map);
     //call getTrailData function
@@ -145,7 +147,7 @@ function getTrailData(map){
 // Style Ice Age Trail
 function styleTrail(feature) {
     return {
-        weight: 2,
+        weight: 2.5,
         color: "red",
         opacity: 1,
     };

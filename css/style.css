@@ -22,8 +22,6 @@
  input[type=text]:focus {
    width: 70%;
  }
-<<<<<<< HEAD
-=======
 
  .sequence-control-container {  
   width: 350px;  
@@ -38,4 +36,3 @@
   width: 85px;  
   height: 40px;
 }
->>>>>>> a1cb2f82b8c1bfaf33929914df54f0bea096b8fc
