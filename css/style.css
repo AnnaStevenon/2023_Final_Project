@@ -47,3 +47,11 @@
 .birds{
  display: list-item; 
 } 
+
+.close-tooltip {
+  font-size: 24px;
+}
+
+.tool-tip {
+  font-size: 20px;
+}
