@@ -50,8 +50,10 @@
 
 .close-toolTip {
   font-size: 24px;
+  color: black;
 }
 
 .toolTip {
   font-size: 20px;
+  color:cornflowerblue;
 }
