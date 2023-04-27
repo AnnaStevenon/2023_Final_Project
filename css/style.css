@@ -48,12 +48,12 @@
  display: list-item; 
 } 
 
-.close-toolTip {
+.close-tooltip {
   font-size: 24px;
   color: black;
 }
 
-.toolTip {
+.tooltip {
   font-size: 20px;
   color:cornflowerblue;
 }
