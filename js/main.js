@@ -159,7 +159,7 @@ function styleTrail(feature) {
     return {
         color: "red",
         opacity: 1,
-        weight: setWeight()
+        weight: 3
     };
 };
 
