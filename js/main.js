@@ -6,11 +6,14 @@ function createMap(){
 
     //create the map
     map = L.map('map', {
-        center: [44.5, -89],
-        zoom: 6.45,
-        attributionControl: false
-    
+        center: [44.9, -89.75],
+        zoom: 6.50,
+        minZoom: 6, //prevent zooming father out than WI
+        attributionControl: false,
+        zoomSnap: 0.25,  
+        zoomDelta: 0.25, // makes zoom steps finer,
     });
+
 
     //add StadiaMaps base tilelayer
     var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
