@@ -180,34 +180,35 @@ function setWeight() {
 
 
 function createToolTip() { //not sure if this is the best way to create the inital pop-up, but I can't find another way for now
-// Define the content of the tooltip
-var tooltipContent = "<div class='tooltip'>" +
-"Welcome to the Ice Age Trail Birders Map!" +
-"<span class='close-tooltip'>&times;</span>" +
-"</div>";
 
-// Create a new tooltip object
-var tooltip = L.tooltip({
-  direction: 'center',
-  permanent: false,
-  opacity: 1,
-  interactive: true,
-  sticky: true,
+    // Define the content of the tooltip
+    var toolTipContent = "<div class='toolTip'>" +
+    "Welcome to the Ice Age Trail Birders Map!" +
+    "<span class='close-tooltip'>&times;</span>" +
+    "</div>";
 
-}).setContent(tooltipContent);
+    // Create a new tooltip object
+    var toolTip = L.tooltip({
+        direction: 'center',
+        permanent: false,
+        opacity: 1,
+        interactive: true,
+        sticky: true,
 
-// get the center of the map
-var center = map.getCenter();
-// set the coordinates for the tooltip
-tooltip.setLatLng(center);
-// Add the tooltip to the map
-tooltip.addTo(map);
+    }).setContent(toolTipContent);
 
-// Bind an event listener to the X button to close the tooltip // this isn't working because anywhere you click it closes
-var closeToolTip = toolTip.getElement().getElementsByClassName('close-tooltip')[0];
-closeToolTip.addEventListener('click', function() {
-  tooltip.closeToolTip();
-});
+    // get the center of the map
+    var center = map.getCenter();
+    // set the coordinates for the tooltip
+    toolTip.setLatLng(center);
+    // Add the tooltip to the map
+    toolTip.addTo(map);
+
+    // Bind an event listener to the X button to close the tooltip // this isn't working because anywhere you click it closes
+    var closeToolTip = toolTip.getElement().getElementsByClassName('close-tooltip')[0];
+        closeToolTip.addEventListener('click', function() {
+        tooltip.closeToolTip();
+        });
 
 };
 
