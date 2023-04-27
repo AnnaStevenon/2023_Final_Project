@@ -20,9 +20,14 @@
     <body>
         <!--put your initial page content here-->
 
-    <input id="searchbar" onkeyup="search_birds()" type="text"
-            name="search" placeholder="Search Bird..">
-
+        <form>
+            <label for="framework">Select a Bird!</label>
+            <select id="searchbar">
+                <option value="1">Horned Greebe</option>
+                <option value="2">Peregrine Falcon</option>
+                <option value="3">Snow Goose</option>
+            </select>
+        </form>
             
         <div id="map"></div>
 
