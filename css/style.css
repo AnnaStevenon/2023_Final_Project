@@ -49,8 +49,11 @@
 } 
 
 .close-tooltip {
-  font-size: 24px;
+  font-size: 20px;
   color: black;
+  position:absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .tooltip {

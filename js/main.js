@@ -182,9 +182,8 @@ function setWeight() {
 function createTooltip() { //not sure if this is the best way to create the inital pop-up, but I can't find another way for now
 
     // Define the content of the tooltip
-    var tooltipContent = "<div class='tooltip'>" +
-    "Welcome to the Ice Age Trail Birders Map!" +
-    "<button class='close-tooltip'>&times;</button>" +
+    var tooltipContent = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" +
+    "<p>Welcome to the Ice Age Trail Birders Map!</p>" +
     "</div>";
 
     // Create a new tooltip object
