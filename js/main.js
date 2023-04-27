@@ -183,7 +183,7 @@ function createTooltip() { //not sure if this is the best way to create the init
 
     // Define the content of the tooltip
     var tooltipContent = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
-    "<h2>Welcome to the Ice Age Trail Birders Map!</h2>" +
+    "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>Select a bird, filter by season, and select a trail segment!</h3>"
     "</div>";
 
@@ -209,7 +209,7 @@ function createTooltip() { //not sure if this is the best way to create the init
 
     console.log(closeTooltip) // above line is selecting the button
     
-    closeTooltip.addEventListener('click', function() {
+    closeTooltip.addEventListener('click-closeTooltip', function() {
         tooltip.closeTooltip();
         });
 
