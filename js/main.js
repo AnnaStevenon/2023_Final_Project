@@ -184,7 +184,7 @@ function createToolTip() { //not sure if this is the best way to create the init
     // Define the content of the tooltip
     var toolTipContent = "<div class='toolTip'>" +
     "Welcome to the Ice Age Trail Birders Map!" +
-    "<span class='close-tooltip'>&times;</span>" +
+    "<span class='close-toolTip'>&times;</span>" +
     "</div>";
 
     // Create a new tooltip object
@@ -205,7 +205,7 @@ function createToolTip() { //not sure if this is the best way to create the init
     toolTip.addTo(map);
 
     // Bind an event listener to the X button to close the tooltip // this isn't working because anywhere you click it closes
-    var closeToolTip = toolTip.getElement().getElementsByClassName('close-tooltip')[0];
+    var closeToolTip = toolTip.getElement().getElementsByClassName('close-toolTip')[0];
         closeToolTip.addEventListener('click', function() {
         tooltip.closeToolTip();
         });
