@@ -153,10 +153,26 @@ function getTrailData(map){
 // Style Ice Age Trail
 function styleTrail(feature) {
     return {
-        weight: 2.5,
         color: "red",
         opacity: 1,
+        weight: setWeight()
     };
 };
+
+// change the weight of the trail line based on the zoom level
+function setWeight() {
+    map.on('zoomend', function () {
+    currentZoom = map.getZoom();
+    if (currentZoom >= 7) {
+        trailLayer.setStyle({weight: 4});
+    } if (currentZoom >= 12) {
+        trailLayer.setStyle({weight: 7});
+    }
+    else {
+        trailLayer.setStyle({weight: 3});
+    }
+    });
+};
+
 
 document.addEventListener('DOMContentLoaded',createMap);
