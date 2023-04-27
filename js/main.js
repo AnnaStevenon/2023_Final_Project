@@ -27,7 +27,6 @@ function createMap(){
     //call creatSequenceControls function
     createSequenceControls();
     //
-
     search_birds()
 
     //map.attributionControl.setPrefix(false)
@@ -111,23 +110,23 @@ function search_birds() {
 function styleBirdRanges(feature) {
     return {
         fillColor: fillSeason(feature.properties.season),
-        fillOpacity: 0.2,
+        fillOpacity: 0.4,
         weight: 1,
         color: '#fff',
         opacity: 1,
     };
 };
 
-// function to change color by season, note that colors are temporary/random for now
+// function to change color by season, note that colors are from color brewer
 function fillSeason(season) {
     if(season=="breeding"){
-        return "green"
+        return "#66c2a5"
     } else if (season == "nonbreeding") {
-        return "red"
+        return "#fc8d62"
     } else if (season === "prebreeding_migration") {
-        return "blue"
+        return "#8da0cb"
     } else if (season == "postbreeding_migration") {
-        return "orange"
+        return "#e78ac3"
     }   
 };
 
@@ -159,7 +158,7 @@ function styleTrail(feature) {
     };
 };
 
-// change the weight of the trail line based on the zoom level
+//function to change the weight of the trail line based on the zoom level
 function setWeight() {
     map.on('zoomend', function () {
     currentZoom = map.getZoom();
