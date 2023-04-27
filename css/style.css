@@ -50,15 +50,16 @@
 
 .close-tooltip {
   font-size: 20px;
-  color: black;
+  color: red;
   position:absolute;
   top: 5px;
   right: 5px;
   background-color: white;
-  border: solid 2px grey;
+  border: solid 2px cornflowerblue;
 }
 
 .tooltip {
   font-size: 12px;
+  text-align: center;
   color:cornflowerblue;
 }
