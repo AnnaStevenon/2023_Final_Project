@@ -36,6 +36,9 @@ function createMap(){
 
     // call tool tip
     createTooltip()
+
+    //update trail widths upon zooming
+    setWeight()
 };
 
 //Create new sequence controls
