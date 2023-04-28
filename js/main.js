@@ -105,7 +105,7 @@ function search_birds() {
         x[i].style.display="list-item";   
         var result = x[i].innerHTML;
         //https://leafletjs.com/reference.html#geojson-setstyle
-        document.querySelector(".sequence-control-container").style.display = "block";  // makes it so the buttons are hidden until a search is conducted
+        document.querySelector(".sequence-control-container").style.display = "block";  // makes it so the buttons are hidden until a search is conducted // this needs to be updated now that the seach bar is different
       }
       else {
           x[i].style.display="none";   
