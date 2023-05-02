@@ -21,6 +21,9 @@ function createMap(){
         attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    //L.easyButton('<img src="img/iat.jpeg">', function(){
+       // $('tooltip').tooltip('show');
+    //},'info window',{ position: 'topright' }).addTo(map);
     search_birds()
 
     //call getBirdData function
@@ -84,14 +87,17 @@ document.getElementById("searchbar").addEventListener("change", function() {
   var selectedBird = document.getElementById("searchbar").value;
 
 if (selectedBird === "Horned Greebe") {
+    open(greebePopup)+
     eBird_rangesGeojson.features.filter(function(feature) {
         return feature.properties.common_nam("Horned Greebe")
       })
 } else if (selectedBird === "Peregrine Falcon") {
+    open(peregrinePopup)+
     eBird_rangesGeojson.features.filter(function(feature) {
         return feature.properties.common_nam("Peregrine Falcon")
       })
 } else if (selectedBird === "Snow Goose") {
+    open(snowGoosePopup)+
     eBird_rangesGeojson.features.filter(function(feature) {
         return feature.properties.common_nam("Snow Goose")
       })
@@ -210,7 +216,7 @@ function createTooltip() { //not sure if this is the best way to create the init
     var tooltipContent = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>Select a bird, filter by season, and select a trail segment!</h3>" +
-    "<img  src= /Users/nsticha/Desktop/2023_Final_Project/img/Horned_Greebe.jpeg</a>"
+    '<img src="img/Horned_Greebe.jpeg" height= 200px; width= 275px>'
     "</div>";
 
     // Create a new tooltip object
@@ -241,6 +247,78 @@ function createTooltip() { //not sure if this is the best way to create the init
 
 };
 
+function createGreebePopup() { 
 
+    // Define the content of the popup
+    var greebePopup = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
+    "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
+    "<h3>The horned grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
+    '<img src="img/Horned_Greebe.jpeg" height= 200px; width= 275px>'
+    "</div>";
+
+    // Create a new popup object
+    var greebe = L.tooltip({
+        direction: 'center',
+        permanent: false,
+        opacity: 1,
+        interactive: true,
+        sticky: true,
+
+    }).setContent(greebePopup);
+
+    // get the center of the map
+    var center = map.getCenter();
+    // set the coordinates for the tooltip
+    greebe.setLatLng(center);
+    // Add the tooltip to the map
+    greebe.addTo(map);
+}
+
+function createPeregrinePopup() { 
+
+    // Define the content of the popup
+    var peregrinePopup = `<div class='tooltip'><button class='close-tooltip'>&times;</button><br></br><h2>Peregrine Falcon</h2><h3>The Peregrine Falcon is a large falcon with a wingspan of 100-110 cm. Adults are blue-gray with white barred under parts and dark and rounded heads with a black ‘mustache’. The wings are pointed, and the tail is relatively short. These birds prefer perching or nesting in tall structures as they watch for medium sized birds to hunt. Look for them on rock ledges, on telephone poles and tall buildings in urban areas. The Peregrine Falcon is listed as endangered in Wisconsin, primarily due to pesticide contamination (DDT), habitat loss, and human disturbance</h3><img src="img/Peregrine Falcon.jpeg" height= 200px; width= 275px>`
+    "</div>";
+
+    // Create a new popup object
+    var peregrine = L.tooltip({
+        direction: 'center',
+        permanent: false,
+        opacity: 1,
+        interactive: true,
+        sticky: true,
+
+    }).setContent(peregrinePopup);
+
+    // get the center of the map
+    var center = map.getCenter();
+    // set the coordinates for the tooltip
+    peregrine.setLatLng(center);
+    // Add the tooltip to the map
+    peregrine.addTo(map);
+}
+function createSnowGoosePopup() { 
+
+    // Define the content of the popup
+    var snowGoosePopup = `<div class='tooltip'><button class='close-tooltip'>&times;</button><br></br><h2>Snow Goose</h2><h3>"Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields."</h3><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px>`
+    "</div>";
+
+    // Create a new popup object
+    var snowGooose = L.tooltip({
+        direction: 'center',
+        permanent: false,
+        opacity: 1,
+        interactive: true,
+        sticky: true,
+
+    }).setContent(snowGoosePopup);
+
+    // get the center of the map
+    var center = map.getCenter();
+    // set the coordinates for the tooltip
+    snowGoose.setLatLng(center);
+    // Add the tooltip to the map
+    snowGoose.addTo(map);
+}
 
 document.addEventListener('DOMContentLoaded',createMap);
