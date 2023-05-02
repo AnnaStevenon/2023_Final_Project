@@ -124,11 +124,11 @@ document.getElementById("searchbar").addEventListener("change", function selectB
     // code to trigger GeoJSON data based on selection
   birdLayer.addTo(map)
   selectedBird = document.getElementById("searchbar").value;
-if (selectedBird === "Horned Greebe") {
-    //createGreebePopup();
+if (selectedBird === "Horned Grebe") {
+    //createGrebePopup();
     birdLayer.setStyle(filterSpecies)
     /*birdLayer.features.filter(function(feature) {
-        return feature.properties.common_nam("Horned Greebe")
+        return feature.properties.common_nam("Horned Grebe")
       })*/
 } else if (selectedBird === "Peregrine Falcon") {
     createPeregrinePopup();
@@ -233,7 +233,7 @@ function createTooltip() { //not sure if this is the best way to create the init
     var tooltipContent = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>Select a bird, filter by season, and select a trail segment!</h3>" +
-    '<img src="img/Horned_Greebe.jpeg" height= 200px; width= 275px>'
+    '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
     "</div>";
 
     // Create a new tooltip object
@@ -268,31 +268,31 @@ function createTooltip() { //not sure if this is the best way to create the init
 
 };
 
-function createGreebePopup() { 
+function createGrebePopup() { 
 
     // Define the content of the popup
-    var greebePopup = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
+    var GrebePopup = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>The horned grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
-    '<img src="img/Horned_Greebe.jpeg" height= 200px; width= 275px>'
+    '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
     "</div>";
 
     // Create a new popup object
-    var greebe = L.tooltip({
+    var grebe = L.tooltip({
         direction: 'center',
         permanent: false,
         opacity: 1,
         interactive: true,
         sticky: true,
 
-    }).setContent(greebePopup);
+    }).setContent(GrebePopup);
 
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    greebe.setLatLng(center);
+    grebe.setLatLng(center);
     // Add the tooltip to the map
-    greebe.addTo(map);
+    grebe.addTo(map);
 }
 
 function createPeregrinePopup() { 
