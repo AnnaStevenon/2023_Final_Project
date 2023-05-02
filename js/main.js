@@ -2,6 +2,8 @@ var map
 var birdLayer;
 var trailLayer;
 var selectedBird;
+var selectedSeason;
+var intersections;
 
 function createMap(){
 
@@ -79,10 +81,69 @@ function createSequenceControls(){
 
     document.querySelectorAll('.season').forEach(function(season){
         season.addEventListener("click", function(){
-            
+
+            if (season.id == "prebreeding"){
+                selectedSeason = "prebreeding_migration";
+            } else if(season.id == "breeding"){
+                selectedSeason = "breeding";
+            } else if(season.id == "postbreeding"){
+                selectedSeason = "postbreeding_migration";
+            } else if(season.id == "nonbreeding"){
+                selectedSeason = "nonbreeding";
+            }
+
+            birdLayer.setStyle(filterBirdSeason);
+
+            //get trail intersections
+
+
+            trailLayer.setStyle(filterTrailSeason);
+            console.log(selectedSeason)
         })
     })
 
+};
+
+function filterTrailSeason(feature) {
+
+    return {
+        color: filterOpacity(feature.properties.Segment_ID)
+    };
+
+    //birdLayer.properties.season
+
+    function filterOpacity(ID){
+        if (intersections.includes(ID.toString())){
+            return "black";
+        }else { 
+            return "red";
+        }
+    }
+};
+
+function getSegments(text){
+    var segments = text.split(',');
+    intersections = segments;
+}
+
+function filterBirdSeason(feature) {
+    
+    
+
+    return {
+        fillOpacity: filterOpacity(feature.properties.season, feature.properties.common_nam),
+        opacity: filterOpacity(feature.properties.season, feature.properties.common_nam)
+    };
+
+    function filterOpacity(season, bird){
+        if (season == selectedSeason && bird == selectedBird){
+            segments = feature.properties.Segment;
+            getSegments(segments);
+            return 0.5;
+        }else { 
+            return 0;
+        }
+    }
 };
 
     // add bird ranges to the map
