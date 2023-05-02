@@ -233,7 +233,7 @@ function createTooltip() { //not sure if this is the best way to create the init
     var tooltipContent = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>Select a bird, filter by season, and select a trail segment!</h3>" +
-    '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
+    '<img src="img/iat.jpeg" height= 200px; width= 250px>'
     "</div>";
 
     // Create a new tooltip object
@@ -273,12 +273,12 @@ function createGrebePopup() {
     // Define the content of the popup
     var GrebePopup = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
-    "<h3>The horned grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
+    "<h3>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
     '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
     "</div>";
 
     // Create a new popup object
-    var grebe = L.tooltip({
+    var grebe = L.popup({
         direction: 'center',
         permanent: false,
         opacity: 1,
@@ -302,7 +302,7 @@ function createPeregrinePopup() {
     "</div>";
 
     // Create a new popup object
-    var peregrine = L.tooltip({
+    var peregrine = L.popup({
         direction: 'center',
         permanent: false,
         opacity: 1,
@@ -325,7 +325,7 @@ function createSnowGoosePopup() {
     "</div>";
 
     // Create a new popup object
-    var snowGoose = L.tooltip({
+    var snowGoose = L.popup({
         direction: 'center',
         permanent: false,
         opacity: 1,
