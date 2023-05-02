@@ -125,11 +125,9 @@ document.getElementById("searchbar").addEventListener("change", function selectB
   birdLayer.addTo(map)
   selectedBird = document.getElementById("searchbar").value;
 if (selectedBird === "Horned Grebe") {
-    //createGrebePopup();
+    createGrebePopup();
     birdLayer.setStyle(filterSpecies)
-    /*birdLayer.features.filter(function(feature) {
-        return feature.properties.common_nam("Horned Grebe")
-      })*/
+    
 } else if (selectedBird === "Peregrine Falcon") {
     createPeregrinePopup();
     birdLayer.setStyle(filterSpecies)
