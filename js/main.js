@@ -38,6 +38,22 @@ function createMap(){
     createTooltip()
 };
 
+
+document.getElementById("searchbar").addEventListener("change", function() {
+    // code to trigger GeoJSON data based on selection
+  });
+  var selectedBird = document.getElementById("searchbar").value;
+
+if (selectedBird === "Horned Greebe") {
+
+} else if (selectedBird === "Peregrine Falcon") {
+  // code to trigger GeoJSON data for peregrine Falcon
+
+} else if (selectedBird === "Snow Goose") {
+  // code to trigger GeoJSON data for snow goose
+} else {
+  print("We do not have data for this bird yet, please try again later")
+}
 //Create new sequence controls
 function createSequenceControls(){   
     var SequenceControl = L.Control.extend({
@@ -110,6 +126,9 @@ function search_birds() {
     }
 };
 }
+document.getElementById("searchbar").addEventListener("change", function() {
+    // code to trigger GeoJSON data based on selection
+  });
 
 // Style polygons based on time period
 function styleBirdRanges(feature) {
@@ -214,6 +233,7 @@ function createTooltip() { //not sure if this is the best way to create the init
         });
 
 };
+
 
 
 document.addEventListener('DOMContentLoaded',createMap);

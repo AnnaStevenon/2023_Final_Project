@@ -19,9 +19,21 @@
 
     <body>
         <!--put your initial page content here-->
+        <div class="card">
 
+            <div class="card-header container-fluid">
+              <div class="row">
+                <div class="col-md-10">
+                  <h3 class="w-75 p-1">Ice Age Trail Birding Map</h3>
+                </div>
+                <div class="col-md-2 float-right">
+
+                    <div id="overlay"></div>  
+                </div>
+              </div>
+            </div>
+          </div>
         <form>
-            <label for="framework">Select a Bird!</label>
             <select id="searchbar">
                 <option value="1">Horned Greebe</option>
                 <option value="2">Peregrine Falcon</option>
@@ -31,12 +43,6 @@
             
         <div id="map"></div>
 
-        <ol id='list'>
-            <li class="common-nam">Horned Greebe</li>
-            <li class="common-nam">Peregrine Falcon</li>
-            <li class="common-nam">Snow Goose</li>
-        </ol>
-            
     
         <!--you can also use this space for internal scripts;
         place these within <script> tags-->
