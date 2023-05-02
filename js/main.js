@@ -237,7 +237,7 @@ function createTooltip() { //not sure if this is the best way to create the init
     "</div>";
 
     // Create a new tooltip object
-    var tooltip = L.tooltip({
+    var tooltip = L.popup({
         direction: 'center',
         permanent: false,
         opacity: 1,
