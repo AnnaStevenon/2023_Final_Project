@@ -41,21 +41,24 @@ function createMap(){
     setWeight()
 };
 
-
 document.getElementById("searchbar").addEventListener("change", function() {
     // code to trigger GeoJSON data based on selection
   });
   var selectedBird = document.getElementById("searchbar").value;
 
 if (selectedBird === "Horned Greebe") {
-
+    eBird_rangesGeojson.features.filter(function(feature) {
+        return feature.properties.common_nam("Horned Greebe")
+      })
 } else if (selectedBird === "Peregrine Falcon") {
-  // code to trigger GeoJSON data for peregrine Falcon
-
+    eBird_rangesGeojson.features.filter(function(feature) {
+        return feature.properties.common_nam("Peregrine Falcon")
+      })
 } else if (selectedBird === "Snow Goose") {
-  // code to trigger GeoJSON data for snow goose
+    eBird_rangesGeojson.features.filter(function(feature) {
+        return feature.properties.common_nam("Snow Goose")
+      })
 } else {
-  print("We do not have data for this bird yet, please try again later")
 }
 //Create new sequence controls
 function createSequenceControls(){   
