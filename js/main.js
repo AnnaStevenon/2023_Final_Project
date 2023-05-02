@@ -41,25 +41,7 @@ function createMap(){
     setWeight()
 };
 
-document.getElementById("searchbar").addEventListener("change", function() {
-    // code to trigger GeoJSON data based on selection
-  });
-  var selectedBird = document.getElementById("searchbar").value;
 
-if (selectedBird === "Horned Greebe") {
-    eBird_rangesGeojson.features.filter(function(feature) {
-        return feature.properties.common_nam("Horned Greebe")
-      })
-} else if (selectedBird === "Peregrine Falcon") {
-    eBird_rangesGeojson.features.filter(function(feature) {
-        return feature.properties.common_nam("Peregrine Falcon")
-      })
-} else if (selectedBird === "Snow Goose") {
-    eBird_rangesGeojson.features.filter(function(feature) {
-        return feature.properties.common_nam("Snow Goose")
-      })
-} else {
-}
 //Create new sequence controls
 function createSequenceControls(){   
     var SequenceControl = L.Control.extend({
@@ -96,7 +78,25 @@ function createSequenceControls(){
     })
 
 };
+document.getElementById("searchbar").addEventListener("change", function() {
+    // code to trigger GeoJSON data based on selection
+  });
+  var selectedBird = document.getElementById("searchbar").value;
 
+if (selectedBird === "Horned Greebe") {
+    eBird_rangesGeojson.features.filter(function(feature) {
+        return feature.properties.common_nam("Horned Greebe")
+      })
+} else if (selectedBird === "Peregrine Falcon") {
+    eBird_rangesGeojson.features.filter(function(feature) {
+        return feature.properties.common_nam("Peregrine Falcon")
+      })
+} else if (selectedBird === "Snow Goose") {
+    eBird_rangesGeojson.features.filter(function(feature) {
+        return feature.properties.common_nam("Snow Goose")
+      })
+} else {
+}
     // add bird ranges to the map
 //var birdRanges = new L.featureGroup();
 
@@ -117,7 +117,7 @@ function search_birds() {
   let input = document.getElementById('searchbar').value
   input=input.toLowerCase();
   console.log(input)
-  let x = document.getElementsByClassName('common-nam');
+  let x = document.getElementsByClassName('common_nam');
     console.log(x)
   for (i = 0; i < x.length; i++) { 
       if (x[i].innerHTML.toLowerCase().includes(input) && input) {
@@ -209,7 +209,8 @@ function createTooltip() { //not sure if this is the best way to create the init
     // Define the content of the tooltip
     var tooltipContent = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
-    "<h3>Select a bird, filter by season, and select a trail segment!</h3>"
+    "<h3>Select a bird, filter by season, and select a trail segment!</h3>" +
+    "<img  src= /Users/nsticha/Desktop/2023_Final_Project/img/Horned_Greebe.jpeg</a>"
     "</div>";
 
     // Create a new tooltip object
