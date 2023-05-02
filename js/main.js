@@ -331,7 +331,7 @@ function createGrebePopup() {
 
     // Define the content of the popup
     var GrebePopup = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
-    "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
+    "<h2>Horned Grebe</h2>" +
     "<h3>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
     '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
     "</div>";
