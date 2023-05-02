@@ -87,7 +87,7 @@ document.getElementById("searchbar").addEventListener("change", function() {
   var selectedBird = document.getElementById("searchbar").value;
 
 if (selectedBird === "Horned Greebe") {
-    createTooltip
+    open(greebePopup)+
     eBird_rangesGeojson.features.filter(function(feature) {
         return feature.properties.common_nam("Horned Greebe")
       })
@@ -245,6 +245,33 @@ function createTooltip() { //not sure if this is the best way to create the init
 
 };
 
+function greebePopup() { //not sure if this is the best way to create the inital pop-up, but I can't find another way for now
 
+    // Define the content of the tooltip
+    var greebePopup = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
+    "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
+    "<h3>The horned grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
+    '<img src="img/Horned_Greebe.jpeg" height= 200px; width= 275px>'
+    "</div>";
+
+    // Create a new tooltip object
+    var greebe = L.tooltip({
+        direction: 'center',
+        permanent: false,
+        opacity: 1,
+        interactive: true,
+        sticky: true,
+
+    }).setContent(greebePopup);
+
+    // get the center of the map
+    var center = map.getCenter();
+    // set the coordinates for the tooltip
+    greebe.setLatLng(center);
+    // Add the tooltip to the map
+    greebe.addTo(map);
+
+
+}
 
 document.addEventListener('DOMContentLoaded',createMap);
