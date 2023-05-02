@@ -250,11 +250,19 @@ function createTooltip() { //not sure if this is the best way to create the init
     tooltip.setLatLng(center);
     // Add the tooltip to the map
     tooltip.addTo(map);
+
+    // Bind an event listener to the X button to close the tooltip // this isn't working because anywhere you click it closes
+    var closeTooltip = tooltip.getElement().getElementsByClassName('close-tooltip')[0];
+
+    console.log(closeTooltip) // above line is selecting the button
     
     //L.easyButton('<img src="img/iat.jpeg">', function(){
         //$('tooltip').tooltip('show');
   //},'info window',{ position: 'topright' }).addTo(map);
     
+    closeTooltip.addEventListener('click-closeTooltip', function() {
+        tooltip.closeTooltip();
+        });
 
 };
 

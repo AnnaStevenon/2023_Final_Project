@@ -61,13 +61,11 @@
 .birds{
  display: list-item; 
 } 
-
-
 .tooltip {
   font-size: 12px;
   text-align: center;
   color:cornflowerblue;
-  image-rendering: auto;
+  position: relative;
 }
 .card {
   padding-top: 1px;
