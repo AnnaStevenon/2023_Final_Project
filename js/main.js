@@ -21,6 +21,9 @@ function createMap(){
         attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    //L.easyButton('<img src="img/iat.jpeg">', function(){
+       // $('tooltip').tooltip('show');
+    //},'info window',{ position: 'topright' }).addTo(map);
     search_birds()
 
     //call getBirdData function
@@ -84,6 +87,7 @@ document.getElementById("searchbar").addEventListener("change", function() {
   var selectedBird = document.getElementById("searchbar").value;
 
 if (selectedBird === "Horned Greebe") {
+    createTooltip
     eBird_rangesGeojson.features.filter(function(feature) {
         return feature.properties.common_nam("Horned Greebe")
       })
@@ -210,7 +214,7 @@ function createTooltip() { //not sure if this is the best way to create the init
     var tooltipContent = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>Select a bird, filter by season, and select a trail segment!</h3>" +
-    "<img  src= /Users/nsticha/Desktop/2023_Final_Project/img/Horned_Greebe.jpeg</a>"
+    '<img src="img/Horned_Greebe.jpeg" height= 200px; width= 275px>'
     "</div>";
 
     // Create a new tooltip object

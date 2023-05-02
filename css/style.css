@@ -62,6 +62,7 @@
   font-size: 12px;
   text-align: center;
   color:cornflowerblue;
+  image-rendering: auto;
 }
 .card {
   padding-top: 1px;
