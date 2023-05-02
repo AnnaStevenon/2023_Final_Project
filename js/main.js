@@ -250,19 +250,11 @@ function createTooltip() { //not sure if this is the best way to create the init
     tooltip.setLatLng(center);
     // Add the tooltip to the map
     tooltip.addTo(map);
-
-    // Bind an event listener to the X button to close the tooltip // this isn't working because anywhere you click it closes
-    var closeTooltip = tooltip.getElement().getElementsByClassName('close-tooltip')[0];
-
-    console.log(closeTooltip) // above line is selecting the button
     
     //L.easyButton('<img src="img/iat.jpeg">', function(){
         //$('tooltip').tooltip('show');
   //},'info window',{ position: 'topright' }).addTo(map);
     
-    closeTooltip.addEventListener('click-closeTooltip', function() {
-        tooltip.closeTooltip();
-        });
 
 };
 
@@ -270,7 +262,7 @@ function createGrebePopup() {
 
     // Define the content of the popup
     var GrebePopup = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
-    "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
+    "<h2>Horned Grebe</h2>" +
     "<h3>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
     '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
     "</div>";
