@@ -92,10 +92,12 @@ if (selectedBird === "Horned Greebe") {
         return feature.properties.common_nam("Horned Greebe")
       })
 } else if (selectedBird === "Peregrine Falcon") {
+    open(peregrinePopup)+
     eBird_rangesGeojson.features.filter(function(feature) {
         return feature.properties.common_nam("Peregrine Falcon")
       })
 } else if (selectedBird === "Snow Goose") {
+    open(snowGoosePopup)+
     eBird_rangesGeojson.features.filter(function(feature) {
         return feature.properties.common_nam("Snow Goose")
       })
@@ -294,6 +296,29 @@ function createPeregrinePopup() {
     peregrine.setLatLng(center);
     // Add the tooltip to the map
     peregrine.addTo(map);
+}
+function createSnowGoosePopup() { 
+
+    // Define the content of the popup
+    var snowGoosePopup = `<div class='tooltip'><button class='close-tooltip'>&times;</button><br></br><h2>Snow Goose</h2><h3>"Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields."</h3><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px>`
+    "</div>";
+
+    // Create a new popup object
+    var snowGooose = L.tooltip({
+        direction: 'center',
+        permanent: false,
+        opacity: 1,
+        interactive: true,
+        sticky: true,
+
+    }).setContent(snowGoosePopup);
+
+    // get the center of the map
+    var center = map.getCenter();
+    // set the coordinates for the tooltip
+    snowGoose.setLatLng(center);
+    // Add the tooltip to the map
+    snowGoose.addTo(map);
 }
 
 document.addEventListener('DOMContentLoaded',createMap);
