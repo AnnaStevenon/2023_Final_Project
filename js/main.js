@@ -1,6 +1,7 @@
 var map
 var birdLayer;
 var trailLayer;
+var selectedBird;
 
 function createMap(){
 
@@ -34,6 +35,8 @@ function createMap(){
     createSequenceControls();
     //
     search_birds()
+
+    
 
     //map.attributionControl.setPrefix(false)
 
@@ -81,28 +84,7 @@ function createSequenceControls(){
     })
 
 };
-document.getElementById("searchbar").addEventListener("change", function() {
-    // code to trigger GeoJSON data based on selection
-  });
-  var selectedBird = document.getElementById("searchbar").value;
 
-if (selectedBird === "Horned Greebe") {
-    open(greebePopup)+
-    eBird_rangesGeojson.features.filter(function(feature) {
-        return feature.properties.common_nam("Horned Greebe")
-      })
-} else if (selectedBird === "Peregrine Falcon") {
-    open(peregrinePopup)+
-    eBird_rangesGeojson.features.filter(function(feature) {
-        return feature.properties.common_nam("Peregrine Falcon")
-      })
-} else if (selectedBird === "Snow Goose") {
-    open(snowGoosePopup)+
-    eBird_rangesGeojson.features.filter(function(feature) {
-        return feature.properties.common_nam("Snow Goose")
-      })
-} else {
-}
     // add bird ranges to the map
 //var birdRanges = new L.featureGroup();
 
@@ -114,7 +96,7 @@ function getBirdData(map){
     .then(function(json){
         birdLayer = L.geoJson(json, {
             style: styleBirdRanges
-        }).addTo(map);
+        });
     })
 
 };
@@ -138,9 +120,44 @@ function search_birds() {
     }
 };
 }
-document.getElementById("searchbar").addEventListener("change", function() {
+document.getElementById("searchbar").addEventListener("change", function selectBird() {
     // code to trigger GeoJSON data based on selection
-  });
+  birdLayer.addTo(map)
+  selectedBird = document.getElementById("searchbar").value;
+if (selectedBird === "Horned Greebe") {
+    //createGreebePopup();
+    birdLayer.setStyle(filterSpecies)
+    /*birdLayer.features.filter(function(feature) {
+        return feature.properties.common_nam("Horned Greebe")
+      })*/
+} else if (selectedBird === "Peregrine Falcon") {
+    createPeregrinePopup();
+    birdLayer.setStyle(filterSpecies)
+
+} else if (selectedBird === "Snow Goose") {
+    createSnowGoosePopup();
+    birdLayer.setStyle(filterSpecies)
+
+} else {
+}
+});
+
+// Style polygons based on time period
+function filterSpecies(feature) {
+
+    return {
+        fillOpacity: filterOpacity(feature.properties.common_nam),
+        opacity: filterOpacity(feature.properties.common_nam)
+    };
+
+    function filterOpacity(species){
+       
+        if (species == selectedBird)
+            return 0.5;
+        else    
+            return 0;
+    }
+};
 
 // Style polygons based on time period
 function styleBirdRanges(feature) {
@@ -241,6 +258,10 @@ function createTooltip() { //not sure if this is the best way to create the init
 
     console.log(closeTooltip) // above line is selecting the button
     
+    //L.easyButton('<img src="img/iat.jpeg">', function(){
+        //$('tooltip').tooltip('show');
+  //},'info window',{ position: 'topright' }).addTo(map);
+    
     closeTooltip.addEventListener('click-closeTooltip', function() {
         tooltip.closeTooltip();
         });
@@ -304,7 +325,7 @@ function createSnowGoosePopup() {
     "</div>";
 
     // Create a new popup object
-    var snowGooose = L.tooltip({
+    var snowGoose = L.tooltip({
         direction: 'center',
         permanent: false,
         opacity: 1,
