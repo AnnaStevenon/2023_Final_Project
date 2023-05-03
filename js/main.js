@@ -31,14 +31,14 @@ function createMap(){
 
     //call getBirdData function
     getBirdData(map);
-    //call getTrailData function
-    getTrailData(map);
+
     //call creatSequenceControls function
     createSequenceControls();
     //
     search_birds()
 
-    
+    //call getTrailData function
+     getTrailData(map);
 
     //map.attributionControl.setPrefix(false)
 
@@ -320,6 +320,7 @@ function createGrebePopup() {
     var GrebePopup = "<div class='tooltip'>" + "<br></br>" +
     "<h2>Horned Grebe</h2>" +
     "<h3>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
+    "<h4> Range data is predicted for the following time periods: <br> Prebreeding migration: 2/15 - 5/31 <br> Breeding: 6/07 - 7/27 <br> Postbreeding migration: 8/03 - 12/14 <br> Nonbreeding: 12/21 - 2/08 </h4>" +
     '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
     "</div>";
 
