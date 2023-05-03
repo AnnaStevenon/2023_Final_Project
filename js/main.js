@@ -273,13 +273,13 @@ function styleTrail(feature) {
 function setWeight() {
     map.on('zoomend', function () {
     currentZoom = map.getZoom();
-    if (currentZoom >= 7) {
-        trailLayer.setStyle({weight: 5});
-    } if (currentZoom >= 12) {
-        trailLayer.setStyle({weight: 8});
+    if (currentZoom >= 5 && currentZoom <= 10) {
+        trailLayer.setStyle({weight: 10});
+    } if (currentZoom >= 10) {
+        trailLayer.setStyle({weight: 10});
     }
     else {
-        trailLayer.setStyle({weight: 3});
+        trailLayer.setStyle({weight: 5});
     }
     });
 };
