@@ -33,7 +33,7 @@
   padding-top: 5px; 
   text-align: center;  
   border: solid gray 1px;  
-  display: block;
+  display: none;
 } 
 .season {
   width: 85px;  
@@ -81,4 +81,7 @@
 
 body{
   background-color: seashell;
+}
+.birdPopup{
+
 }

@@ -20,21 +20,28 @@ function createMap(){
 
     //add StadiaMaps base tilelayer
     var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+    opacity:0.7
 }).addTo(map);
+
+var CartoDB_PositronOnlyLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 20
+}).addTo(map);
+
+
 
     //L.easyButton('<img src="img/iat.jpeg">', function(){
        // $('tooltip').tooltip('show');
     //},'info window',{ position: 'topright' }).addTo(map);
-    search_birds()
+    search_birds();
 
     //call getBirdData function
     getBirdData(map);
 
     //call creatSequenceControls function
     createSequenceControls();
-    //
-    //search_birds()
 
     //call getTrailData function
      getTrailData(map);
@@ -42,10 +49,13 @@ function createMap(){
     //map.attributionControl.setPrefix(false)
 
     // call tool tip
-    createTooltip()
+    createTooltip();
 
     //update trail widths upon zooming
-    setWeight()
+    setWeight();
+
+     // bring trail to the front
+     //trailLayer.bringToFront();
 };
 
 
@@ -155,7 +165,8 @@ function getBirdData(map){
     })
     .then(function(json){
         birdLayer = L.geoJson(json, {
-            style: styleBirdRanges
+            style: styleBirdRanges,
+            interactive:false
         });
     })
 
@@ -172,7 +183,6 @@ function search_birds() {
         x[i].style.display="list-item";   
         var result = x[i].innerHTML;
         //https://leafletjs.com/reference.html#geojson-setstyle
-        document.querySelector(".sequence-control-container").style.display = "block";  // makes it so the buttons are hidden until a search is conducted // this needs to be updated now that the seach bar is different
       }
       else {
           x[i].style.display="none";   
@@ -182,6 +192,8 @@ function search_birds() {
 }
 document.getElementById("searchbar").addEventListener("change", function selectBird() {
     // code to trigger GeoJSON data based on selection
+    document.querySelector(".sequence-control-container").style.display = "block";  // makes it so the buttons are hidden until a search is conducted // this needs to be updated now that the seach bar is different
+
   birdLayer.addTo(map)
   selectedBird = document.getElementById("searchbar").value;
 if (selectedBird === "Horned Grebe") {
@@ -251,6 +263,7 @@ function getTrailData(map){
     })
     .then(function(json){
         trailLayer = L.geoJson(json, {
+            pane:"shadowPane",
             style: styleTrail(),
             onEachFeature: function(feature, layer) { //add a popup for each segment with the name
                 layer.bindPopup("Segment: " + feature.properties.SEGMENT_NA)
@@ -302,7 +315,7 @@ function createTooltip() { //not sure if this is the best way to create the init
         permanent: false,
         opacity: 1,
         interactive: true,
-        sticky: true,
+        sticky: true
 
     }).setContent(tooltipContent);
 
@@ -332,6 +345,7 @@ function createGrebePopup() {
         opacity: 1,
         interactive: true,
         sticky: true,
+        className: "birdPopup"
 
     }).setContent(GrebePopup);
 
@@ -356,13 +370,16 @@ function createPeregrinePopup() {
         opacity: 1,
         interactive: true,
         sticky: true,
-
+        className: "birdPopup",
+        autoPan:false,
+        maxWidth:500
     }).setContent(peregrinePopup);
 
     // get the center of the map
     var center = map.getCenter();
+    console.log(center)
     // set the coordinates for the tooltip
-    peregrine.setLatLng(center);
+    peregrine.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat,lon:center.lng}));
     // Add the tooltip to the map
     peregrine.addTo(map);
 }
@@ -379,6 +396,8 @@ function createSnowGoosePopup() {
         opacity: 1,
         interactive: true,
         sticky: true,
+        className: "birdPopup"
+        
 
     }).setContent(snowGoosePopup);
 
