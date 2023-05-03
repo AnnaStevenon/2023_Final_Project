@@ -35,7 +35,7 @@ function createMap(){
     //call creatSequenceControls function
     createSequenceControls();
     //
-    search_birds()
+    //search_birds()
 
     //call getTrailData function
      getTrailData(map);
@@ -252,7 +252,7 @@ function getTrailData(map){
     })
     .then(function(json){
         trailLayer = L.geoJson(json, {
-            style: styleTrail,
+            style: styleTrail(),
             onEachFeature: function(feature, layer) { //add a popup for each segment with the name
                 layer.bindPopup("Segment: " + feature.properties.SEGMENT_NA)
             }
@@ -292,7 +292,9 @@ function createTooltip() { //not sure if this is the best way to create the init
     var tooltipContent = "<div class='tooltip'>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>Select a bird, filter by season, and select a trail segment!</h3>" +
-    '<img src="img/iat.jpeg" height= 200px; width= 250px>'
+    '<img src="img/iat.jpeg" height= 200px; width= 250px>' +"<br></br>" +
+    "<h4> These maps show predicted bird ranges for 2021 using data from eBird at Cornell University. <br> For more information see the<a href='https://ebird.org/home'> eBird homepage.</a> </h4>" +
+    "<br> <h4>For more information on the Ice Age Trail Alliance <a href='https://www.iceagetrail.org/'> click here.</a> </h4>"
     "</div>";
 
     // Create a new tooltip object
@@ -345,7 +347,7 @@ function createGrebePopup() {
 function createPeregrinePopup() { 
 
     // Define the content of the popup
-    var peregrinePopup = `<div class='tooltip'><br></br><h2>Peregrine Falcon</h2><h3>The Peregrine Falcon is a large falcon with a wingspan of 100-110 cm. Adults are blue-gray with white barred under parts and dark and rounded heads with a black ‘mustache’. The wings are pointed, and the tail is relatively short. These birds prefer perching or nesting in tall structures as they watch for medium sized birds to hunt. Look for them on rock ledges, on telephone poles and tall buildings in urban areas. The Peregrine Falcon is listed as endangered in Wisconsin, primarily due to pesticide contamination (DDT), habitat loss, and human disturbance</h3><img src="img/Peregrine Falcon.jpeg" height= 200px; width= 275px>`
+    var peregrinePopup = `<div class='tooltip'><br></br><h2>Peregrine Falcon</h2><h3>The Peregrine Falcon is a large falcon with a wingspan of 100-110 cm. Adults are blue-gray with white barred under parts and dark and rounded heads with a black ‘mustache’. The wings are pointed, and the tail is relatively short. These birds prefer perching or nesting in tall structures as they watch for medium sized birds to hunt. Look for them on rock ledges, on telephone poles and tall buildings in urban areas. The Peregrine Falcon is listed as endangered in Wisconsin, primarily due to pesticide contamination (DDT), habitat loss, and human disturbance</h3><img src="img/Peregrine Falcon.jpeg" height= 200px; width= 175px>`
     "</div>";
 
     // Create a new popup object
