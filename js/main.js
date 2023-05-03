@@ -292,7 +292,7 @@ function createTooltip() { //not sure if this is the best way to create the init
     var tooltipContent = "<div class='tooltip'>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>Select a bird, filter by season, and select a trail segment!</h3>" +
-    '<img src="img/iat.jpeg" height= 200px; width= 250px>' +"<br></br>" +
+    '<img src="img/iat.jpeg" height= 150px; width= 200px>' +"<br></br>" +
     "<h4> These maps show predicted bird ranges for 2021 using data from eBird at Cornell University. <br> For more information see the<a href='https://ebird.org/home'> eBird homepage.</a> </h4>" +
     "<br> <h4>For more information on the Ice Age Trail Alliance <a href='https://www.iceagetrail.org/'> click here.</a> </h4>"
     "</div>";
