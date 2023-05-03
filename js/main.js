@@ -21,7 +21,7 @@ function createMap(){
     //add StadiaMaps base tilelayer
     var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
-    opacity:0.7
+    opacity:0.8
 }).addTo(map);
 
 var CartoDB_PositronOnlyLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
@@ -333,9 +333,9 @@ function createGrebePopup() {
     // Define the content of the popup
     var GrebePopup = "<div class='tooltip'>" + "<br></br>" +
     "<h2>Horned Grebe</h2>" +
-    "<h3>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>"  +
+    "<p>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</p>"  +
     '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>' +
-    "<h4> Range data is predicted for the following time periods: <br> Prebreeding migration: 2/15 - 5/31 <br> Breeding: 6/07 - 7/27 <br> Postbreeding migration: 8/03 - 12/14 <br> Nonbreeding: 12/21 - 2/08 </h4>"
+    "<p> Range data is predicted for the following time periods: <br> Prebreeding migration: 2/15 - 5/31,  Breeding: 6/7 - 7/27, Postbreeding migration: 8/3 - 12/14,  Nonbreeding: 12/21 - 2/8 </p>"
     "</div>";
 
     // Create a new popup object
@@ -345,14 +345,15 @@ function createGrebePopup() {
         opacity: 1,
         interactive: true,
         sticky: true,
-        className: "birdPopup"
-
+        className: "birdPopup",
+        autoPan:false,
+        maxWidth:310
     }).setContent(GrebePopup);
 
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    grebe.setLatLng(center);
+    grebe.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat,lon:center.lng}));
     // Add the tooltip to the map
     grebe.addTo(map);
 }
@@ -360,7 +361,7 @@ function createGrebePopup() {
 function createPeregrinePopup() { 
 
     // Define the content of the popup
-    var peregrinePopup = `<div class='tooltip'><br></br><h2>Peregrine Falcon</h2><h3>The Peregrine Falcon is a large falcon with a wingspan of 100-110 cm. Adults are blue-gray with white barred under parts and dark and rounded heads with a black ‘mustache’. The wings are pointed, and the tail is relatively short. These birds prefer perching or nesting in tall structures as they watch for medium sized birds to hunt. Look for them on rock ledges, on telephone poles and tall buildings in urban areas. The Peregrine Falcon is listed as endangered in Wisconsin, primarily due to pesticide contamination (DDT), habitat loss, and human disturbance</h3><img src="img/Peregrine Falcon.jpeg" height= 200px; width= 175px>`
+    var peregrinePopup = `<div class='tooltip'><br></br><h2>Peregrine Falcon</h2><p>The Peregrine Falcon is a large falcon with a wingspan of 100-110 cm. Adults are blue-gray with white barred under parts and dark and rounded heads with a black ‘mustache’. The wings are pointed, and the tail is relatively short. These birds prefer perching or nesting in tall structures as they watch for medium sized birds to hunt. Look for them on rock ledges, on telephone poles and tall buildings in urban areas. The Peregrine Falcon is listed as endangered in Wisconsin, primarily due to pesticide contamination (DDT), habitat loss, and human disturbance</p><img src="img/Peregrine Falcon.jpeg" height= 200px; width= 175px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 2/22 - 5/31, Breeding: 6/7 - 7/20, Postbreeding migration: 7/27 - 11/23, Nonbreeding: 11/30 - 2/15</p>`
     "</div>";
 
     // Create a new popup object
@@ -372,21 +373,21 @@ function createPeregrinePopup() {
         sticky: true,
         className: "birdPopup",
         autoPan:false,
-        maxWidth:500
+        maxWidth:310
     }).setContent(peregrinePopup);
 
     // get the center of the map
     var center = map.getCenter();
     console.log(center)
     // set the coordinates for the tooltip
-    peregrine.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat,lon:center.lng}));
+    peregrine.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat +0.4,lon:center.lng}));
     // Add the tooltip to the map
     peregrine.addTo(map);
 }
 function createSnowGoosePopup() { 
 
     // Define the content of the popup
-    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Snow Goose</h2><h3>"Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields."</h3><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px>`
+    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Snow Goose</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
     "</div>";
 
     // Create a new popup object
@@ -396,15 +397,15 @@ function createSnowGoosePopup() {
         opacity: 1,
         interactive: true,
         sticky: true,
-        className: "birdPopup"
-        
-
+        className: "birdPopup",
+        autoPan:false,
+        maxWidth:310
     }).setContent(snowGoosePopup);
 
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    snowGoose.setLatLng(center);
+    snowGoose.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.5,lon:center.lng}));
     // Add the tooltip to the map
     snowGoose.addTo(map);
 }
