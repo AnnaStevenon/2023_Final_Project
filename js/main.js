@@ -274,9 +274,9 @@ function setWeight() {
     map.on('zoomend', function () {
     currentZoom = map.getZoom();
     if (currentZoom >= 7) {
-        trailLayer.setStyle({weight: 4});
+        trailLayer.setStyle({weight: 5});
     } if (currentZoom >= 12) {
-        trailLayer.setStyle({weight: 7});
+        trailLayer.setStyle({weight: 8});
     }
     else {
         trailLayer.setStyle({weight: 3});
