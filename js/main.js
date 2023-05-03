@@ -289,7 +289,7 @@ function setWeight() {
 function createTooltip() { //not sure if this is the best way to create the inital pop-up, but I can't find another way for now
 
     // Define the content of the tooltip
-    var tooltipContent = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
+    var tooltipContent = "<div class='tooltip'>" + "<br></br>" +
     "<h2>Welcome to the Ice Age Trail Birding Map!</h2>" +
     "<h3>Select a bird, filter by season, and select a trail segment!</h3>" +
     '<img src="img/iat.jpeg" height= 200px; width= 250px>'
@@ -330,7 +330,7 @@ function createTooltip() { //not sure if this is the best way to create the init
 function createGrebePopup() { 
 
     // Define the content of the popup
-    var GrebePopup = "<div class='tooltip'>" + "<button class='close-tooltip'>&times;</button>" + "<br></br>" +
+    var GrebePopup = "<div class='tooltip'>" + "<br></br>" +
     "<h2>Horned Grebe</h2>" +
     "<h3>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
     '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
@@ -357,7 +357,7 @@ function createGrebePopup() {
 function createPeregrinePopup() { 
 
     // Define the content of the popup
-    var peregrinePopup = `<div class='tooltip'><button class='close-tooltip'>&times;</button><br></br><h2>Peregrine Falcon</h2><h3>The Peregrine Falcon is a large falcon with a wingspan of 100-110 cm. Adults are blue-gray with white barred under parts and dark and rounded heads with a black ‘mustache’. The wings are pointed, and the tail is relatively short. These birds prefer perching or nesting in tall structures as they watch for medium sized birds to hunt. Look for them on rock ledges, on telephone poles and tall buildings in urban areas. The Peregrine Falcon is listed as endangered in Wisconsin, primarily due to pesticide contamination (DDT), habitat loss, and human disturbance</h3><img src="img/Peregrine Falcon.jpeg" height= 200px; width= 275px>`
+    var peregrinePopup = `<div class='tooltip'><br></br><h2>Peregrine Falcon</h2><h3>The Peregrine Falcon is a large falcon with a wingspan of 100-110 cm. Adults are blue-gray with white barred under parts and dark and rounded heads with a black ‘mustache’. The wings are pointed, and the tail is relatively short. These birds prefer perching or nesting in tall structures as they watch for medium sized birds to hunt. Look for them on rock ledges, on telephone poles and tall buildings in urban areas. The Peregrine Falcon is listed as endangered in Wisconsin, primarily due to pesticide contamination (DDT), habitat loss, and human disturbance</h3><img src="img/Peregrine Falcon.jpeg" height= 200px; width= 275px>`
     "</div>";
 
     // Create a new popup object
@@ -380,7 +380,7 @@ function createPeregrinePopup() {
 function createSnowGoosePopup() { 
 
     // Define the content of the popup
-    var snowGoosePopup = `<div class='tooltip'><button class='close-tooltip'>&times;</button><br></br><h2>Snow Goose</h2><h3>"Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields."</h3><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px>`
+    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Snow Goose</h2><h3>"Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields."</h3><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px>`
     "</div>";
 
     // Create a new popup object
