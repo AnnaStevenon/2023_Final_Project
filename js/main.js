@@ -19,10 +19,9 @@ function createMap(){
 
 
     //add StadiaMaps base tilelayer
-    var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
-        maxZoom: 20,
-        attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+}).addTo(map);
 
     //L.easyButton('<img src="img/iat.jpeg">', function(){
        // $('tooltip').tooltip('show');
@@ -114,9 +113,9 @@ function filterTrailSeason(feature) {
 
     function filterOpacity(ID){
         if (intersections.includes(ID.toString())){
-            return "black";
+            return "yellow";
         }else { 
-            return "red";
+            return "white";
         }
     }
 };
@@ -264,7 +263,7 @@ function getTrailData(map){
 // Style Ice Age Trail
 function styleTrail(feature) {
     return {
-        color: "red",
+        color: "white",
         opacity: 1,
         weight: 3
     };
@@ -321,9 +320,9 @@ function createGrebePopup() {
     // Define the content of the popup
     var GrebePopup = "<div class='tooltip'>" + "<br></br>" +
     "<h2>Horned Grebe</h2>" +
-    "<h3>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>" +
-    "<h4> Range data is predicted for the following time periods: <br> Prebreeding migration: 2/15 - 5/31 <br> Breeding: 6/07 - 7/27 <br> Postbreeding migration: 8/03 - 12/14 <br> Nonbreeding: 12/21 - 2/08 </h4>" +
-    '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>'
+    "<h3>The Horned Grebe is a small waterbird with a short neck, blocky head, and straight narrow bill. They can be found in freshwater ponds with cattails, sedges, willows, and other emergent vegetation, and in lakes and rivers during migration. The bird's plumage changes from gray and white as a non-breeding adult to brown and black with a golden stripe on the head during breeding.</h3>"  +
+    '<img src="img/Horned_Grebe.jpeg" height= 200px; width= 275px>' +
+    "<h4> Range data is predicted for the following time periods: <br> Prebreeding migration: 2/15 - 5/31 <br> Breeding: 6/07 - 7/27 <br> Postbreeding migration: 8/03 - 12/14 <br> Nonbreeding: 12/21 - 2/08 </h4>"
     "</div>";
 
     // Create a new popup object
