@@ -421,10 +421,10 @@ function createInfoButton(){
         },
 
         onAdd: function () {
-            // create the control container div with a particular class name
+            // create the control container div
             var container = L.DomUtil.create('div', 'infoButton');
             
-            //add season buttons
+            //add info button
             container.insertAdjacentHTML('beforeend', '<button class="infoButton" id="info" title="Info">?</button>');
 
             return container;
