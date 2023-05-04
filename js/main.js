@@ -48,14 +48,15 @@ var CartoDB_PositronOnlyLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/
 
     //map.attributionControl.setPrefix(false)
 
+    // call info button
+    createInfoButton();
+
     // call tool tip
     createTooltip();
 
     //update trail widths upon zooming
     setWeight();
 
-     // bring trail to the front
-     //trailLayer.bringToFront();
 };
 
 
@@ -298,7 +299,7 @@ function setWeight() {
 };
 
 
-function createTooltip() { //not sure if this is the best way to create the inital pop-up, but I can't find another way for now
+function createTooltip() { //intitally was a tooltip but now is a popup
 
     // Define the content of the tooltip
     var tooltipContent = "<div class='tooltip'>" + "<br></br>" +
@@ -322,7 +323,7 @@ function createTooltip() { //not sure if this is the best way to create the init
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    tooltip.setLatLng(center);
+    tooltip.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 1.5,lon:center.lng}));
     // Add the tooltip to the map
     tooltip.addTo(map);
 
@@ -356,7 +357,7 @@ function createGrebePopup() {
     grebe.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat,lon:center.lng}));
     // Add the tooltip to the map
     grebe.addTo(map);
-}
+};
 
 function createPeregrinePopup() { 
 
@@ -383,7 +384,8 @@ function createPeregrinePopup() {
     peregrine.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat +0.4,lon:center.lng}));
     // Add the tooltip to the map
     peregrine.addTo(map);
-}
+};
+
 function createSnowGoosePopup() { 
 
     // Define the content of the popup
@@ -408,6 +410,33 @@ function createSnowGoosePopup() {
     snowGoose.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.5,lon:center.lng}));
     // Add the tooltip to the map
     snowGoose.addTo(map);
-}
+};
+
+
+//Create info button
+function createInfoButton(){   
+    var infoButton = L.Control.extend({
+        options: {
+            position: 'topright'
+        },
+
+        onAdd: function () {
+            // create the control container div with a particular class name
+            var container = L.DomUtil.create('div', 'infoButton');
+            
+            //add season buttons
+            container.insertAdjacentHTML('beforeend', '<button class="infoButton" id="info" title="Info">?</button>');
+
+            return container;
+        }
+    });
+
+    map.addControl(new infoButton());  
+
+    document.getElementById("info").addEventListener("click", function openInfo(){
+        console.log("hello") // this is working fine
+        createTooltip(); //why not working? Console does not show errors
+    });
+};
 
 document.addEventListener('DOMContentLoaded',createMap);
