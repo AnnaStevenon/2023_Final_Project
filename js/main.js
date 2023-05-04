@@ -435,7 +435,7 @@ function createInfoButton(){
 
     document.getElementById("info").addEventListener("click", function openInfo(){
         console.log("hello") // this is working fine
-        createTooltip(); //why not working? Console does not show errors
+        createTooltip(); //why not working? Console does not show errors, why can't the function be called?
     });
 };
 
