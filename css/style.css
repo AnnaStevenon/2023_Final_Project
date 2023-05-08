@@ -43,13 +43,20 @@
   text-align: center;
   display: inline-block;
   border-radius: 10px;
-  padding: 5px 5px;
-  border: solid gray 1px;
+  border: solid rgb(104, 103, 103) 1px;
 }
 
 #prebreeding {
   background-color: #8da0cb;
 }
+
+/* Makes the button font bold when clicked; maybe should add futher visual cues */
+#prebreeding:focus {
+  background-color: #8da0cb;
+  font-weight: bolder;
+}
+
+
 #breeding {
   background-color: #66c2a5;
 }
