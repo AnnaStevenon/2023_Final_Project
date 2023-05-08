@@ -27,17 +27,24 @@
  }
  .sequence-control-container {  
   width: 350px;  
-  height: 45px;  
-  background-color: rgba(255,255,255,0.8); 
+  height: 50px;  
+  /*background-color: rgba(255,255,255,0.8); */
   line-height: 45px; 
   padding-top: 5px; 
   text-align: center;  
-  border: solid gray 1px;  
+  /*border: solid gray 1px; */
+  border-radius: 10px;
   display: none;
 } 
 .season {
   width: 85px;  
   height: 40px;
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px 5px;
+  border: solid gray 1px;
 }
 
 #prebreeding {

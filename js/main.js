@@ -72,10 +72,10 @@ function createSequenceControls(){
             var container = L.DomUtil.create('div', 'sequence-control-container');
             
             //add season buttons
-            container.insertAdjacentHTML('beforeend', '<button class="season" id="prebreeding" title="Prebreeding Migration"></button>');
-            container.insertAdjacentHTML('beforeend', '<button class="season" id="breeding" title="Breeding"></button>'); 
-            container.insertAdjacentHTML('beforeend', '<button class="season" id="postbreeding" title="Postbreeding Migration"></button>');
-            container.insertAdjacentHTML('beforeend', '<button class="season" id="nonbreeding" title="Nonbreeding"></button>');
+            container.insertAdjacentHTML('beforeend', '<button class="season" id="prebreeding" title="Prebreeding Migration">Prebreeding migration</button>');
+            container.insertAdjacentHTML('beforeend', '<button class="season" id="breeding" title="Breeding">Breeding</button>'); 
+            container.insertAdjacentHTML('beforeend', '<button class="season" id="postbreeding" title="Postbreeding Migration">Postbreeding migration</button>');
+            container.insertAdjacentHTML('beforeend', '<button class="season" id="nonbreeding" title="Nonbreeding">Nonbreeding</button>');
 
 
             //disable any mouse event listeners for the container
