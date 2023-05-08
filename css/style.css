@@ -48,6 +48,7 @@
 
 #prebreeding {
   background-color: #8da0cb;
+  vertical-align: top;
 }
 
 #prebreeding:focus {
@@ -59,6 +60,7 @@
 
 #breeding {
   background-color: #66c2a5;
+  vertical-align: top;
 }
 
 #breeding:focus {
@@ -69,6 +71,7 @@
 
 #postbreeding {
   background-color: #e78ac3;
+  vertical-align: top;
 }
 
 #postbreeding:focus {
@@ -79,6 +82,7 @@
 
 #nonbreeding {
   background-color: #fc8d62;
+  vertical-align: top;
 }
 
 #nonbreeding:focus {
