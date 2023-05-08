@@ -26,7 +26,7 @@
    width: 70%;
  }
  .sequence-control-container {  
-  width: 350px;  
+  width: 380px;  
   height: 50px;  
   /*background-color: rgba(255,255,255,0.8); */
   line-height: 45px; 
@@ -37,7 +37,7 @@
   display: none;
 } 
 .season {
-  width: 85px;  
+  width: 90px;  
   height: 40px;
   font-size: 12px;
   text-align: center;
@@ -50,21 +50,41 @@
   background-color: #8da0cb;
 }
 
-/* Makes the button font bold when clicked; maybe should add futher visual cues */
 #prebreeding:focus {
   background-color: #8da0cb;
   font-weight: bolder;
+  border: solid #4c6191 3px;
 }
 
 
 #breeding {
   background-color: #66c2a5;
 }
+
+#breeding:focus {
+  background-color: #66c2a5;
+  font-weight: bolder;
+  border: solid #398a72 3px;
+}
+
 #postbreeding {
   background-color: #e78ac3;
 }
+
+#postbreeding:focus {
+  background-color: #e78ac3;
+  font-weight: bolder;
+  border: solid #b83e89 3px;
+}
+
 #nonbreeding {
   background-color: #fc8d62;
+}
+
+#nonbreeding:focus {
+  background-color: #fc8d62;
+  font-weight: bolder;
+  border: solid #df6332 3px;
 }
 
 #list{
