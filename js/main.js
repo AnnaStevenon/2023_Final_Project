@@ -226,7 +226,7 @@ if (selectedBird === "Horned Grebe") {
     trailLayer.setStyle(filterTrail)
 
 } 
- else if (selectedBird === "Yellow Bellied Sap Sucker") {
+ else if (selectedBird === "Yellow-bellied Sapsucker") {
     createSapSuckerPopup();
     birdLayer.setStyle(filterSpecies)
     trailLayer.setStyle(filterTrail)
@@ -443,7 +443,7 @@ function createSnowGoosePopup() {
 function createWoodDuckPopup() { 
 
     // Define the content of the popup
-    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Snow Goose</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
+    var woodDuckPopup = `<div class='tooltip'><br></br><h2>Wood Duck</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Woo.jpeg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
     "</div>";
 
     // Create a new popup object
@@ -469,7 +469,7 @@ function createWoodDuckPopup() {
 function createSapSuckerPopup() { 
 
     // Define the content of the popup
-    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Snow Goose</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
+    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Yellow-bellied Sapsucker</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
     "</div>";
 
     // Create a new popup object
@@ -495,7 +495,7 @@ function createSapSuckerPopup() {
 function createGoldeneyePopup() { 
 
     // Define the content of the popup
-    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Snow Goose</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
+    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Common Goldeneye</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Snow_Goose.jpeg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
     "</div>";
 
     // Create a new popup object
