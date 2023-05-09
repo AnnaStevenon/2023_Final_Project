@@ -364,7 +364,7 @@ function createGrebePopup() {
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    grebe.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat,lon:center.lng}));
+    grebe.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.5,lon:center.lng}));
     // Add the tooltip to the map
     grebe.addTo(map);
 };
