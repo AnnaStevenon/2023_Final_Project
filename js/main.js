@@ -131,6 +131,13 @@ function filterTrailSeason(feature) {
     }
 };
 
+function filterTrail(feature) {
+
+    return {
+        color: "white"
+    };
+};
+
 function getSegments(text){
     var segments = text.split(',');
     intersections = segments;
@@ -200,14 +207,17 @@ document.getElementById("searchbar").addEventListener("change", function selectB
 if (selectedBird === "Horned Grebe") {
     createGrebePopup();
     birdLayer.setStyle(filterSpecies)
+    trailLayer.setStyle(filterTrail)
     
 } else if (selectedBird === "Peregrine Falcon") {
     createPeregrinePopup();
     birdLayer.setStyle(filterSpecies)
+    trailLayer.setStyle(filterTrail)
 
 } else if (selectedBird === "Snow Goose") {
     createSnowGoosePopup();
     birdLayer.setStyle(filterSpecies)
+    trailLayer.setStyle(filterTrail)
 
 } else {
 }
