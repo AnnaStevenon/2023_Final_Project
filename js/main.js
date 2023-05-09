@@ -437,6 +437,8 @@ function createInfoButton(){
             //add info button
             container.insertAdjacentHTML('beforeend', '<button class="infoButton" id="info" title="Info">?</button>');
 
+            L.DomEvent.disableClickPropagation(container); 
+
             return container;
         }
     });
@@ -444,8 +446,8 @@ function createInfoButton(){
     map.addControl(new infoButton());  
 
     document.getElementById("info").addEventListener("click", function openInfo(){
-        console.log("hello") // this is working fine
-        createTooltip(); //why not working? Console does not show errors, why can't the function be called?
+        console.log("hello")
+        createTooltip(); 
     });
 };
 
