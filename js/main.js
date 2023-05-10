@@ -382,7 +382,7 @@ function createGrebePopup() {
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    grebe.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.5,lon:center.lng}));
+    grebe.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.6,lon:center.lng}));
     // Add the tooltip to the map
     grebe.addTo(map);
 };
@@ -409,7 +409,7 @@ function createPeregrinePopup() {
     var center = map.getCenter();
     console.log(center)
     // set the coordinates for the tooltip
-    peregrine.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat +0.4,lon:center.lng}));
+    peregrine.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat +0.5,lon:center.lng}));
     // Add the tooltip to the map
     peregrine.addTo(map);
 };
@@ -435,7 +435,7 @@ function createSnowGoosePopup() {
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    snowGoose.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.5,lon:center.lng}));
+    snowGoose.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.6,lon:center.lng}));
     // Add the tooltip to the map
     snowGoose.addTo(map);
 };
@@ -443,7 +443,7 @@ function createSnowGoosePopup() {
 function createWoodDuckPopup() { 
 
     // Define the content of the popup
-    var woodDuckPopup = `<div class='tooltip'><br></br><h2>Wood Duck</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Wood_duck.jpg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
+    var woodDuckPopup = `<div class='tooltip'><br></br><h2>Wood Duck</h2><p>The Wood Duck is a medium-sized waterfowl inhabiting most of Wisconsin. These birds display beautiful multicolored heads and bodies in males, while females are mostly a speckled brown color with a bit of blue under the wings. They can be found in shallow inland lakes, ponds, slow-moving rivers, and swamplands of deciduous and mixed forest regions. During the breeding season, male Wood Ducks perform courtship fanning, showing off their colorful plumage.</p><img src="img/Wood_duck.jpg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
     "</div>";
 
     // Create a new popup object
@@ -469,7 +469,7 @@ function createWoodDuckPopup() {
 function createSapSuckerPopup() { 
 
     // Define the content of the popup
-    var sapSuckerPopup = `<div class='tooltip'><br></br><h2>Yellow-bellied Sapsucker</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Yellow_bellied_Sapsucker.jpg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
+    var sapSuckerPopup = `<div class='tooltip'><br></br><h2>Yellow-bellied Sapsucker</h2><p>The Yellow-bellied Sapsucker is a small woodpecker common throughout Wisconsin. They prefer to reside in mixed forests with aspen trees, drilling into them in search of insects, grubs, or as the name suggests tree sap. They often drill holes into multiple trees at once, flying from tree to tree to collect sap as it slowly oozes out. They can be identified by their faint yellow bellies and red head/chin in males, whereas females are mostly brown with a little red on the top of their heads. .</p><img src="img/Yellow_bellied_Sapsucker.jpg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
     "</div>";
 
     // Create a new popup object
@@ -487,7 +487,7 @@ function createSapSuckerPopup() {
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    sapSucker.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.5,lon:center.lng}));
+    sapSucker.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.6,lon:center.lng}));
     // Add the tooltip to the map
     sapSucker.addTo(map);
 }; 
@@ -495,11 +495,11 @@ function createSapSuckerPopup() {
 function createGoldeneyePopup() { 
 
     // Define the content of the popup
-    var snowGoosePopup = `<div class='tooltip'><br></br><h2>Common Goldeneye</h2><p>Adult Snow Geese may appear mostly white with black wings, considered a white morph, whereas others, termed blue morphs, have a darker body with gray-blue hues across the body, black wings, and a white head. Originally the two morphs were considered as two species, but in 1972 they were combined into one species with a single gene controlling the color difference. They may be found in large flocks and are often seen in or near water or foraging on agricultural fields.</p><img src="img/Common_Goldeneye.jpg" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
+    var goldeneyePopup = `<div class='tooltip'><br></br><h2>Common Goldeneye</h2><p>The Common Goldeneye is a small waterfowl that spends most of its time on forested lakes and rivers with clear water. They are identified by their characteristic gold eye that appears in both males and females, though males have a bright green head whereas females have a brown head. During their courtship exercises, the male throws his head as far back as possible, exhibiting a shrill call to impress females.</p><img src="img/goldeneye.webp" height= 200px; width= 275px><p> Range data is predicted for the following time periods: <br> Prebreeding migration: 1/18 - 5/31, Breeding: 6/7 - 8/3, Postbreeding migration: 8/17 - 12/21, Nonbreeding: 12/28 - 1/8</p>`
     "</div>";
 
     // Create a new popup object
-    var snowGoose = L.popup({
+    var commonGoldeneye = L.popup({
         direction: 'center',
         permanent: false,
         opacity: 1,
@@ -508,14 +508,14 @@ function createGoldeneyePopup() {
         className: "birdPopup",
         autoPan:false,
         maxWidth:310
-    }).setContent(snowGoosePopup);
+    }).setContent(goldeneyePopup);
 
     // get the center of the map
     var center = map.getCenter();
     // set the coordinates for the tooltip
-    snowGoose.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.5,lon:center.lng}));
+    commonGoldeneye.setLatLng(L.latLng({lat:map.getBounds()._southWest.lat + 0.6,lon:center.lng}));
     // Add the tooltip to the map
-    snowGoose.addTo(map);
+    commonGoldeneye.addTo(map);
 };
 
 

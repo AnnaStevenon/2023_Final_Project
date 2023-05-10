@@ -1,9 +1,10 @@
 #map {
     height: 700px;
-    width: 98%;
+    width: 99%;
     display: inline-block;
     border: solid rgb(200, 222, 243) 5px; 
     align-items: center;
+    scroll-padding-right: 15px;
 }
 
 #searchbar{
